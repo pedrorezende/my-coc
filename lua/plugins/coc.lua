@@ -67,7 +67,7 @@ M.config = function()
   keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
   keyset("n", "gt", "<Plug>(coc-type-definition)", {silent = true})
   keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
-  keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
+  --keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
 
   -- Use K to show documentation in preview window
   function _G.show_docs()
@@ -81,7 +81,6 @@ M.config = function()
       end
   end
   keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
-
 
   -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
   vim.api.nvim_create_augroup("CocGroup", {})
@@ -138,7 +137,6 @@ M.config = function()
   keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
   keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
 
-
   -- Remap <C-f> and <C-b> to scroll float windows/popups
   ---@diagnostic disable-next-line: redefined-local
   local opts = {silent = true, nowait = true, expr = true}
@@ -151,12 +149,10 @@ M.config = function()
   keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
   keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
-
   -- Use CTRL-S for selections ranges
   -- Requires 'textDocument/selectionRange' support of language server
   keyset("n", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
   keyset("x", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
-
 
   -- " Add `:Fold` command to fold current buffer
   vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", {nargs = '?'})
@@ -178,9 +174,9 @@ M.config = function()
   -- Show commands
   keyset("n", "<space>C", ":<C-u>CocList commands<cr>", opts)
   -- Find symbol of current document
-  keyset("n", "<space>so", ":<C-u>CocList outline<cr>", opts)
+  -- keyset("n", "<space>so", ":<C-u>CocList outline<cr>", opts)
   -- Search workspace symbols
-  keyset("n", "<space>ss", ":<C-u>CocList -I symbols<cr>", opts)
+  -- keyset("n", "<space>ss", ":<C-u>CocList -I symbols<cr>", opts)
   -- Do default action for next item
   keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
   -- Do default action for previous item

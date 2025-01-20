@@ -76,7 +76,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
                                            -- the default case_mode is "smart_case"
         },
         coc = {
-          theme = 'ivy',
           prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
           push_cursor_on_edit = true, -- save the cursor position to jump back in the future
           timeout = 3000, -- timeout for coc commands
@@ -93,7 +92,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		local builtin = require("telescope.builtin")
 		local map = vim.keymap.set
 
-    -- I've removed the lsp methods in order to provide some shortcuts from coc
 		map("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 		map("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 		map("n", "<leader>/", builtin.find_files, { desc = "[S]earch [F]iles" })
@@ -103,6 +101,35 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		map("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 		map("n", "<leader>sb", builtin.buffers, { desc = "[ ] Find existing buffers" })
 		map("n", "<leader>st", builtin.tags, { desc = "[S]earch [T]ags" })
+
+    -- Coc integration
+    map("n", "<leader>ss", ":<C-u>Telescope coc workspace_symbols<cr>", { desc = "[S]earch workspace [S]ymbols" })
+    map("n", "<leader>so", ":<C-u>Telescope coc document_symbols<cr>", { desc = "[S]earch d[o]cument symbols" })
+    map("n", "gr", ":<C-u>Telescope coc references<cr>", { desc = "[G]oto [R]eferences" })
+    map("n", "gD", ":<C-u>Telescope coc definitions<cr>", { desc = "[G]oto [D]efinition" })
+    map("n", "gT", ":<C-u>Telescope coc type_definitions<cr>", { desc = "[G]oto to [T]ype definitions" })
+    map("n", "gI", ":<C-u>Telescope coc implementations<cr>", { desc = "[G]oto to [I]mplementations" })
+
+		-- Fuzzy find all the symbols in your current document.
+		--  Symbols are things like variables, functions, types, etc.
+		-- map("n", "<leader>so", builtin.lsp_document_symbols, { desc = "[D]ocument [S]ymbols" })
+
+		-- Jump to the definition of the word under your cursor.
+		--  This is where a variable was first declared, or where a function is defined, etc.
+		--  To jump back, press <C-t>.
+		-- map("n", "gd", builtin.lsp_definitions, { desc = "[G]oto [D]efinition" })
+
+		-- Find references for the word under your cursor.
+		-- map("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
+
+		-- Jump to the implementation of the word under your cursor.
+		--  Useful when your language has ways of declaring types without an actual implementation.
+		-- map("n", "gi", builtin.lsp_implementations, { desc = "[G]oto [I]mplementation" })
+
+		-- Jump to the type of the word under your cursor.
+		--  Useful when you're not sure what type a variable is and you want to see
+		--  the definition of its *type*, not where it was *defined*.
+		-- map("n", "gt", builtin.lsp_type_definitions, { desc = "Type [D]efinition" })
 
 		-- Shortcut for searching your Neovim configuration files
 		vim.keymap.set("n", "<leader>sc", function()
