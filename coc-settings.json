@@ -1,12 +1,11 @@
 {
   "npm.binPath": "npm",
   "coc.preferences.enableMessageDialog": true,
-  "coc.preferences.extensionUpdateCheck": "daily",
+  "extensions.updateCheck": "daily",
   "coc.preferences.useQuickfixForLocations": false,
   "coc.preferences.formatOnType": true,
   "coc.preferences.willSaveHandlerTimeout": 1000,
   "coc.source.file.ignoreHidden": false,
-  "html.autoClosingTags": false,
   "codeLens.enable": true,
   "codeLens.position": "eol",
   "colors.enable": true,
