@@ -9,7 +9,6 @@ M.config = function()
     "coc-tsserver",
     "coc-json",
     "coc-css",
-    "coc-git",
     "coc-jest",
     "coc-snippets",
     "coc-prettier",
