@@ -1,12 +1,12 @@
 {
   "npm.binPath": "npm",
-  "coc.preferences.enableLinkedEditing": true,
   "coc.preferences.enableMessageDialog": true,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.useQuickfixForLocations": false,
   "coc.preferences.formatOnType": true,
   "coc.preferences.willSaveHandlerTimeout": 1000,
   "coc.source.file.ignoreHidden": false,
+  "html.autoClosingTags": false,
   "codeLens.enable": true,
   "codeLens.position": "eol",
   "colors.enable": true,
@@ -22,10 +22,15 @@
   "eslint.autoFixOnSave": true,
   "eslint.format.enable": true,
   "eslint.packageManager": "npm",
+  "tsserver.npm": "/usr/local/bin/npm",
+  "tsserver.useSyntaxServer": "always",
   "inlayHint.display": false,
   "notification.statusLineProgress": true,
   "pullDiagnostic.onChange": false,
   "pullDiagnostic.onSave": true,
   "tsserver.implicitProjectConfig.checkJs": true,
   "snippets.ultisnips.pythonPrompt": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }

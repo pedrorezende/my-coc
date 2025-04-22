@@ -8,9 +8,9 @@ M.config = function()
   vim.g.coc_global_extensions = {
     "coc-tsserver",
     "coc-json",
-    "coc-html",
     "coc-css",
     "coc-git",
+    "coc-jest",
     "coc-snippets",
     "coc-prettier",
     "coc-eslint",
